@@ -10,12 +10,12 @@ This server is optimized for autonomous agents and "Bleisure" (business + leisur
 
 | Resource | URL |
 |---|---|
-| **MCP Tools Configuration** | https://www.businesshotels.com/mcp-server.php?route=config |
-| **MCP Tools Endpoint** | https://www.businesshotels.com/mcp-server.php?route=tools |
-| **OpenAPI Spec** | https://www.businesshotels.com/openapi.json |
-| **MCP Discovery Spec** | https://www.businesshotels.com/.well-known/mcp.json |
-| **Plugin Manifest** | https://www.businesshotels.com/.well-known/ai-plugin.json |
-| **Full API Docs** | https://www.businesshotels.com/tool-config.html |
+| **MCP Tools Configuration** | [https://www.businesshotels.com/mcp-server.php?route=config](https://www.businesshotels.com/mcp-server.php?route=config) |
+| **MCP Tools Endpoint** | [https://www.businesshotels.com/mcp-server.php?route=tools](https://www.businesshotels.com/mcp-server.php?route=tools) |
+| **OpenAPI Spec** | [https://www.businesshotels.com/openapi.json](https://www.businesshotels.com/openapi.json) |
+| **MCP Discovery Spec** | [https://www.businesshotels.com/.well-known/mcp.json](https://www.businesshotels.com/.well-known/mcp.json) |
+| **Plugin Manifest** | [https://www.businesshotels.com/.well-known/ai-plugin.json](https://www.businesshotels.com/.well-known/ai-plugin.json) |
+| **Full API Docs** | [https://www.businesshotels.com/tool-config.html](https://www.businesshotels.com/tool-config.html) |
 
 ---
 
