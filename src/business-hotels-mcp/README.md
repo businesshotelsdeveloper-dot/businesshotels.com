@@ -7,7 +7,12 @@
 
 This is the official [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server for **BusinessHotels.com**. It provides autonomous AI agents with **instant (<1s)** access to live hotel inventory, rates, and booking capabilities worldwide.
 
- 
+🚀 Performance & Reliability
+Ultra-Low Latency: Engineered for agentic workflows where speed is critical. Most requests return in under 800ms, allowing agents to compare multiple hotels in parallel without hitting LLM timeout limits.
+
+Real-Time Accuracy: Unlike cached databases, our "Agentic API" fetches live inventory directly from the global distribution system (GDS) the moment the tool is called.
+
+Optimized for Parallelism: Use the Multi-Hotel Comparison Pattern below to fetch rates for 5+ hotels simultaneously in under 2 seconds.
 ---
 
 ## Connection & Discovery 
