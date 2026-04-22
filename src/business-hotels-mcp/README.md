@@ -29,7 +29,7 @@ Add the following block to the `mcpServers` section of your `claude_desktop_conf
   "command": "npx",
   "args": ["-y", "@businesshotels/mcp-server"],
   "env": {
-    "BUSINESS_HOTELS_API_KEY": "test-live-hotel-rates2025"
+    "BUSINESS_HOTELS_API_KEY": "test-live-hotel-rates2025" 
   }
 }
  
