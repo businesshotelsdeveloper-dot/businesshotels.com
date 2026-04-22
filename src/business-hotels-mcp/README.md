@@ -55,11 +55,7 @@ fetch("https://www.businesshotels.com/mcp-server.php?route=tools/get_live_hotel_
 
 
 
-
-
 // QUICK TEST 2 - Python
-
-
 
 
 import requests
@@ -95,8 +91,6 @@ else:
 // QUICK TEST 3 - cURL
 
 
-
-
 curl -s -X POST \
   "https://www.businesshotels.com/mcp-server.php?route=tools/get_live_hotel_rates" \
   -H "Content-Type: application/json" \
@@ -113,7 +107,6 @@ curl -s -X POST \
 
 
 // QUICK TEST 4 - OpenAI Python SDK — Function Calling
-
 
 
 from openai import OpenAI
@@ -166,6 +159,7 @@ if msg.tool_calls:
 
 // QUICK TEST 5 - OpenAI Python SDK — Function Calling
 
+
 async function getHotelRates(hotelName, checkinDate, checkoutDate, adults = 2, currency = "USD") {
   const res = await fetch(
     "https://www.businesshotels.com/mcp-server.php?route=tools/get_live_hotel_rates",
@@ -198,7 +192,7 @@ window.businessHotelsAPI = { getHotelRates };
 
 
 
-// QUICK TEST 5 - JavaScript
+// QUICK TEST 6 - JavaScript
 
 
 
@@ -234,7 +228,7 @@ window.businessHotelsAPI = { getHotelRates };
 
 
 
-// QUICK TEST 6 - Google Gemini Python SDK
+// QUICK TEST 7 - Google Gemini Python SDK
 
 
 
