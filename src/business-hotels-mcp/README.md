@@ -1,7 +1,11 @@
 ![MCP Version](https://img.shields.io/badge/MCP-1.0-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![Uptime](https://img.shields.io/badge/Uptime-99.9%25-brightgreen)
+![Speed](https://img.shields.io/badge/Latency-<1s-brightgreen)
 ![Market](https://img.shields.io/badge/Focus-Bleisure-orange)
+
+# BusinessHotels.com Universal Agentic API (MCP)
+
+This is the official [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server for **BusinessHotels.com**. It provides autonomous AI agents with **instant (<1s)** access to live hotel inventory, rates, and booking capabilities worldwide.
 
 # BusinessHotels.com Universal Agentic API (MCP)
 
