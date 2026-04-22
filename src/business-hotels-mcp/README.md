@@ -448,56 +448,69 @@ print(final.text)
 
 ---
 
-## 🔁 Multi-Hotel Comparison Pattern
+## 🔁 Multi-Hotel Comparison Pattern (High Performance)
+This API uses a **one-hotel-per-request** architecture. To maintain sub-second response times for comparisons, agents must use **asynchronous parallelism** rather than sequential loops.
 
-This API uses a **one-hotel-per-request** architecture — there is no batch endpoint. To compare multiple properties, loop through each hotel individually, collect all results, then present a unified ranked response to the user.
-
-## ✅ Correct Pattern — Parallel Fetching (Under 2 Seconds)
-
-To make the Multi-Hotel Comparison Pattern truly demonstrate our sub-second speed, this implementation moves away from sequential loops in favor of **asynchronous parallelism**. 
-
-In a sequential version, 5 hotels taking 800ms each would take 4 seconds. With the parallel code below, all requests fire at once, finishing the entire comparison in **~800ms to 1 second**.
-
-This example uses Python's `concurrent.futures` to fire all requests simultaneously, ensuring your agent gets a full comparison in the time it takes for a single request.
+## ✅ Correct Pattern — Parallel Fetching (Under 1 Second)
+In a sequential loop, 5 hotels would take ~4 seconds. With the parallel code below using `concurrent.futures`, all requests fire simultaneously, finishing the entire comparison in the time it takes for a single request.
 
 ```python
-import requests
+ import requests
+from concurrent.futures import ThreadPoolExecutor
 
 URL     = "https://www.businesshotels.com/mcp-server.php?route=tools/get_live_hotel_rates"
 HEADERS = {"Content-Type": "application/json", "X-API-KEY": "test-live-hotel-rates2025"}
 
 hotels_to_check = [
     "Fairmont San Francisco, San Francisco, CA, US",
-    "Four Seasons San Francisco at Embarcadero San Francisco, CA, US",
+    "Four Seasons San Francisco at Embarcadero, San Francisco, CA, US",
     "Ritz-Carlton San Francisco, San Francisco, CA, US",
     "St. Regis San Francisco, San Francisco, CA, US",
-    "Palace Hotel a Luxury Collection Hotel, San Francisco,  CA, US"
+    "Palace Hotel a Luxury Collection Hotel, San Francisco, CA, US"
 ]
 
-params  = {"checkinDate": "2026-07-12", "checkoutDate": "2026-07-14", "adults": 2, "currency": "USD"}
-results = []
+params = {"checkinDate": "2026-07-12", "checkoutDate": "2026-07-14", "adults": 2, "currency": "USD"}
 
-for hotel in hotels_to_check:
-    data  = requests.post(URL, headers=HEADERS, json={**params, "hotelName": hotel}, timeout=10).json()
-    rates = data.get("rates")
-    if rates and rates.get("display_all_in_total"):
-        price = float(str(rates["display_all_in_total"]).replace(",", ""))
+def fetch_hotel_data(hotel_name):
+    """Worker function to fetch a single hotel rate."""
+    try:
+        response = requests.post(URL, headers=HEADERS, json={**params, "hotelName": hotel_name}, timeout=10)
+        return response.json()
+    except Exception:
+        return None
+
+# EXECUTE IN PARALLEL: This is what makes it fast.
+with ThreadPoolExecutor(max_workers=5) as executor:
+    raw_results = list(executor.map(fetch_hotel_data, hotels_to_check))
+
+# Process and sort results
+results = []
+for data in raw_results:
+    if data and data.get("rates") and data["rates"].get("display_all_in_total"):
+        # Strip commas for math: "1,250.00" -> 1250.0
+        price = float(str(data["rates"]["display_all_in_total"]).replace(",", ""))
         results.append({
-            "name":     data["hotel_name"],
-            "price":    price,
-            "url":      data["booking_page_live_rates"],
-            "hotel_id": data.get("hotel_id")
+            "name":  data["hotel_name"],
+            "price": price,
+            "url":   data["booking_page_live_rates"]
         })
 
-# Sort and present ALL results together — never respond mid-loop
 results.sort(key=lambda x: x["price"])
+
 for i, h in enumerate(results, 1):
     print(f"{i}. {h['name']}: ${h['price']:.2f}")
 
-cheapest = results
-print(f"\n🏆 Best Value: {cheapest['name']} at ${cheapest['price']:.2f}")
-print(f"👉 Book Now:   {cheapest['url']}")
+if results:
+    print(f"\n🏆 Best Value: {results[0]['name']} at ${results[0]['price']:.2f}")
+    print(f"👉 Book Now:   {results[0]['url']}")
 ```
+
+### ⚠️ Critical Implementation Guardrails
+* **Confidence Scoring:** Always check the `best_match_score`. If it is below **0.85**, the agent must verify the hotel identity (City/State) before providing a booking link.
+* **Price Lock Expiry:** The `ppn_bundle` and price are valid for **~20 minutes**. Agents should re-fetch the rate if the user returns to an old session.
+* **Discovery Specs:** For non-MCP integrations, use our [OpenAPI 3.0 Spec](https://www.businesshotels.com/openapi.json) or [AI Plugin Manifest](https://www.businesshotels.com/.well-known/ai-plugin.json).
+
+
 
 ### Architectural Rules
 
