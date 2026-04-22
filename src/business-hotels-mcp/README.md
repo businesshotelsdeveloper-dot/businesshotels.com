@@ -25,4 +25,21 @@ To add the Universal Agentic API to your local MCP settings, paste this into you
     }
   }
 }
- 
+
+🛠 Testing the API
+Verify the live hotel rates and agentic matching logic directly from your terminal:
+
+1. cURL (Mac / Linux / WSL / Git Bash)
+# Bash — Quick terminal test with JSON formatting.
+
+curl -s -X POST "[https://www.businesshotels.com/mcp-server.php?route=tools/get_live_hotel_rates](https://www.businesshotels.com/mcp-server.php?route=tools/get_live_hotel_rates)" \
+  -H "Content-Type: application/json" \
+  -H "X-API-KEY: test-live-hotel-rates2025" \
+  -d '{
+    "hotelName": "Marriott Marquis, San Francisco, US",
+    "checkinDate": "2026-07-15",
+    "checkoutDate": "2026-07-16",
+    "adults": 2,
+    "currency": "USD"
+  }' | python3 -m json.tool
+
