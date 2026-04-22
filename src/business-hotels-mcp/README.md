@@ -37,6 +37,26 @@ Add to your `claude_desktop_config.json`:
 }
 ```
 
+ 
+
+## : Remote SSE (Best for Cursor & Windsurf)
+Use this for cloud-native integration without needing to install local dependencies.
+
+JSON
+{
+  "mcpServers": {
+    "businesshotels-remote": {
+      "description": "Live hotel rates, all-in pricing, and booking URLs from BusinessHotels.com",
+      "type": "remote",
+      "urls": {
+        "tools": "https://www.businesshotels.com/mcp-server.php?route=tools",
+        "config": "https://www.businesshotels.com/mcp-server.php?route=config"
+      }
+    }
+  }
+}
+```
+
 ---
 
 ## API Reference
