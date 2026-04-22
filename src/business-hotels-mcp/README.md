@@ -242,7 +242,7 @@ tools = [{
 }]
 
 # Step 1 — model decides to call the tool
-messages = [{"role": "user", "content": "Rates for Luxor Las Vegas, April 20-21 2026?"}]
+messages = [{"role": "user", "content": "Rates for Luxor Las Vegas, July 20-21 2026?"}]
 r1  = client.chat.completions.create(model="gpt-4o", messages=messages, tools=tools, tool_choice="auto")
 msg = r1.choices.message
 messages.append(msg)
@@ -297,7 +297,7 @@ const tools = [{
 }];
 
 // Step 1 — model decides to call the tool
-const messages = [{ role: "user", content: "Rates for Luxor Las Vegas, April 20-21 2026?" }];
+const messages = [{ role: "user", content: "Rates for Luxor Las Vegas, July 20-21 2026?" }];
 const r1  = await client.chat.completions.create({ model: "gpt-4o", messages, tools, tool_choice: "auto" });
 const msg = r1.choices.message;
 messages.push(msg);
