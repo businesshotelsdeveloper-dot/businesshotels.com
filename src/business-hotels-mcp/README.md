@@ -423,7 +423,13 @@ print(final.text)
 
 This API uses a **one-hotel-per-request** architecture — there is no batch endpoint. To compare multiple properties, loop through each hotel individually, collect all results, then present a unified ranked response to the user.
 
-### ✅ Correct Pattern — Loop, Collect, Then Respond
+## ✅ Correct Pattern — Parallel Fetching (Under 2 Seconds)
+
+To make the Multi-Hotel Comparison Pattern truly demonstrate our sub-second speed, this implementation moves away from sequential loops in favor of **asynchronous parallelism**. 
+
+In a sequential version, 5 hotels taking 800ms each would take 4 seconds. With the parallel code below, all requests fire at once, finishing the entire comparison in **~800ms to 1 second**.
+
+This example uses Python's `concurrent.futures` to fire all requests simultaneously, ensuring your agent gets a full comparison in the time it takes for a single request.
 
 ```python
 import requests
