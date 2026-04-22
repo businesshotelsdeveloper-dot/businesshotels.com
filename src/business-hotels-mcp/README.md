@@ -7,6 +7,7 @@ This server is optimized for autonomous agents and "Bleisure" (business + leisur
 
 - **MCP Tools Endpoint:** `https://www.businesshotels.com/mcp-server.php?route=tools`
 - **OpenAPI Spec:** [openapi.json](https://www.businesshotels.com/openapi.json)
+- **MCP Discovery Spec: https://www.businesshotels.com/.well-known/mcp.json
 - **Plugin Manifest:** [.well-known/ai-plugin.json](https://www.businesshotels.com/.well-known/ai-plugin.json)
 - **Full API Documentation:** [Tool Configuration](https://www.businesshotels.com/tool-config.html)
 
