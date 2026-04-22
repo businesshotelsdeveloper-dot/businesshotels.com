@@ -20,3 +20,18 @@ To add this to your local MCP settings:
     }
   }
 }
+
+
+## 🛠 Testing the API
+You can test the BusinessHotels logic directly from your terminal to verify the live hotel rates:
+
+### cURL (Linux/Mac/WSL)
+```bash
+curl -s -X POST "[https://www.businesshotels.com/mcp-server.php?route=tools/get_live_hotel_rates](https://www.businesshotels.com/mcp-server.php?route=tools/get_live_hotel_rates)" \
+  -H "Content-Type: application/json" \
+  -H "X-API-KEY: test-live-hotel-rates2025" \
+  -d '{
+    "hotelName": "Marriott Marquis, San Francisco, US",
+    "checkinDate": "2026-07-15",
+    "checkoutDate": "2026-07-16"
+  }' | python3 -m json.tool
