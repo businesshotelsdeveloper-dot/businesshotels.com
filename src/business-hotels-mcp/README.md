@@ -5,9 +5,9 @@
 ![Latency](https://img.shields.io/badge/Latency-%3C800ms-green?style=flat-square&logo=speedtest&logoColor=white)
 ![Focus](https://img.shields.io/badge/Focus-Bleisure-orange)
 
- BusinessHotels Universal Agentic API
+ 
 
-## 🌍 Universal LLM Compatibility
+## 🌍  BusinessHotels Universal Agentic API - Universal LLM Compatibility
 The **BusinessHotels.com MCP Server** uses the OpenAI-compatible JSON Schema format—the universal standard accepted by all leading AI platforms. The MCP discovery endpoint enables zero-config auto-registration across the entire agentic ecosystem.
 
 | Platform | Integration Method | Status |
