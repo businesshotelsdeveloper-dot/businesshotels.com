@@ -7,7 +7,7 @@
 
  
 
-## 🌍  BusinessHotels Agentic API - Universal LLM Compatibility. 
+## 🌍  BusinessHotels Agentic API - Universal LLM Compatibility
 The **BusinessHotels.com MCP Server** is built on the OpenAI-compatible JSON Schema format—the universal standard accepted by all leading AI platforms. This enables zero-config auto-registration across the entire agentic ecosystem.
 
 | Platform | Integration Method | Status |
