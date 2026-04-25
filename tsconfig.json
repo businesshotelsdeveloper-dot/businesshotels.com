@@ -3,8 +3,8 @@
     "target": "ES2022",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "outDir": "./dist",
-    "rootDir": "./",
+    "outDir": "dist",
+    "rootDir": "src/business-hotels-mcp",
     "strict": true,
     "skipLibCheck": true,
     "esModuleInterop": true
