@@ -6,7 +6,7 @@
     "business-hotels-mcp": "dist/index.js"
   },
   "scripts": {
-    "build": "tsc src/business-hotels-mcp/index.ts --outDir dist --target ES2022 --module ESNext --moduleResolution node --esModuleInterop true --skipLibCheck true",
+    "build": "tsc",
     "prepare": "npm run build",
     "start": "node dist/index.js"
   },
