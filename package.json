@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "type": "module",
   "bin": {
-    "business-hotels-mcp": "./dist/index.js"
+    "business-hotels-mcp": "src/business-hotels-mcp/dist/index.js"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p src/business-hotels-mcp/tsconfig.json",
     "prepare": "npm run build",
-    "start": "node dist/index.js"
+    "start": "node src/business-hotels-mcp/dist/index.js"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.1",
