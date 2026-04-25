@@ -1,5 +1,6 @@
 {
-  "name": "@businesshotels/mcp-server",
+  "name": "business-hotels-mcp",
+  "mcpName": "io.github.businesshotelsdeveloper-dot/businesshotels",
   "version": "1.0.2",
   "description": "Universal Agentic API for real-time hotel pricing and booking automation via BusinessHotels.com",
   "main": "build/index.js",
