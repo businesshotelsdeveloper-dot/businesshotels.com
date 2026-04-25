@@ -8,6 +8,26 @@
  
 
 ## 🌍  BusinessHotels.com Agentic API - Universal LLM Compatibility. 
+
+---
+
+## ⚡ Performance Showcase
+
+The [BusinessHotels.com MCP Server](https://github.com/businesshotelsdeveloper-dot/businesshotels.com) is built for speed. By optimizing for **sub-second latency**, we enable autonomous agents to perform complex travel logic—like ranking multiple properties—in real-time without timing out.
+
+### 🔄 Multi-Hotel Agentic Loop (Sub-Second Ranking)
+Demonstrates the **"Loop, Collect, Then Respond"** pattern. The agent queries 5 luxury properties and ranks them by value in under 1 second.
+[![BusinessHotels.com MCP Multi-Hotel Demo](https://img.youtube.com/vi/xwaulgWBqJQ/0.jpg)](https://youtu.be/xwaulgWBqJQ)
+* **Goal:** Ranking and comparing live inventory.
+* **Speed:** Total verification for 5 properties in **< 1 second**.
+
+### 🔍 Single Property Verification & Deep Dive
+Demonstrates real-time price validation and booking hand-off for a specific hotel.
+[![BusinessHotels.com MCP Single Hotel Demo](https://img.youtube.com/vi/wg-NCa0ga1A/0.jpg)](https://youtu.be/wg-NCa0ga1A)
+* **Goal:** Final price verification and generating "Agentic Booking" URLs.
+* **Speed:** Complete JSON payload returned in **~531ms**.
+
+---
 The **BusinessHotels.com MCP Server** is built on the OpenAI-compatible JSON Schema format—the universal standard accepted by all leading AI platforms. This enables zero-config auto-registration across the entire agentic ecosystem.
 
 | Platform | Integration Method | Status |
