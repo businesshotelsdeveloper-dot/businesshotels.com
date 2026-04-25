@@ -3,8 +3,8 @@
     "target": "ES2022",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "outDir": "./dist",
-    "rootDir": "./",
+    "outDir": "build",
+    "rootDir": ".",
     "strict": true,
     "skipLibCheck": true,
     "esModuleInterop": true
