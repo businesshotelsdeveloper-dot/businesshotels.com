@@ -6,7 +6,7 @@
     "business-hotels-mcp": "dist/index.js"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc src/business-hotels-mcp/index.ts --outDir dist --target ES2022 --module NodeNext --moduleResolution NodeNext --esModuleInterop true --skipLibCheck true",
     "prepare": "npm run build",
     "start": "node dist/index.js"
   },
@@ -16,7 +16,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@types/node": "^20.11.24",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "@types/node": "^20.11.24"
   }
 }
