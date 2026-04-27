@@ -1,6 +1,6 @@
 {
   "name": "business-hotels-mcp",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "type": "module",
   "bin": {
     "business-hotels-mcp": "./dist/index.js"
