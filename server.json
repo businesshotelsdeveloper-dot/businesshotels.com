@@ -6,12 +6,12 @@
     "url": "https://github.com/businesshotelsdeveloper-dot/businesshotels.com",
     "source": "github"
   },
-  "version": "1.0.0",
+  "version": "2.0.2",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "business-hotels-mcp",
-      "version": "1.0.0",
+      "version": "2.0.2",
       "transport": {
         "type": "stdio"
       }
