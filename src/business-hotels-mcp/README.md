@@ -94,7 +94,10 @@ Add the following block to the `mcpServers` section of your `claude_desktop_conf
   "mcpServers": {
     "businesshotels-universal-agentic-api": {
       "command": "npx",
-      "args": ["-y", "@businesshotels/business-hotels-mcp"],
+      "args": [
+        "-y", 
+        "@businesshotels/business-hotels-mcp"
+      ],
       "env": {
         "BUSINESS_HOTELS_API_KEY": "test-live-hotel-rates2025"
       }
