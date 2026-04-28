@@ -44,40 +44,42 @@ The **BusinessHotels.com MCP Server** is built on the OpenAI-compatible JSON Sch
 
 ### 🔗 Technical Discovery & Agentic Endpoints
 
-This is the official [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server for **BusinessHotels.com**. It provides autonomous AI agents with **instant (<1s)** access to live hotel inventory, rates, and booking capabilities worldwide.
+### 🔗 Technical Discovery & Multi-Model Endpoints
 
-| Transport / Protocol | Primary Endpoint URL |
-| :--- | :--- |
-| **MCP (SSE)** | `https://www.businesshotels.com/mcp-server-claude.php` |
-| **MCP (JSON-RPC)** | `https://www.businesshotels.com/mcp-server.php?route=tools` |
-| **OpenAPI 3.1** | `https://www.businesshotels.com/openapi.json` |
-| **Discovery Spec** | `https://www.businesshotels.com/.well-known/mcp.json` |
-| **Plugin Manifest** | `https://www.businesshotels.com/.well-known/ai-plugin.json` |
+This server is a **Multi-Model Transport Hub** that provides autonomous AI agents with instant (<1s) access to live hotel inventory. It is optimized for the **Model Context Protocol (MCP)** and OpenAI-compatible tool calling.
+
+| LLM Platform | Protocol / Transport | Primary Integration URL |
+| :--- | :--- | :--- |
+| **Claude.ai** | MCP (SSE) | `https://www.businesshotels.com/mcp-server-claude.php` |
+| **Perplexity Comet** | MCP (JSON-RPC) | `https://www.businesshotels.com/mcp-server-perplexity.php` |
+| **Gemini / Grok** | MCP (Stateless) | `https://www.businesshotels.com/mcp-server.php?route=tools` |
+| **ChatGPT** | OpenAPI 3.1 | `https://www.businesshotels.com/openapi.json` |
+| **Discovery Spec** | JSON Manifest | `https://www.businesshotels.com/.well-known/mcp.json` |
+| **Plugin Spec** | Manifest | `https://www.businesshotels.com/.well-known/ai-plugin.json` |
 
 > [!TIP]
-> **Zero-Prompt Engineering:** By adhering to the **Model Context Protocol** and **Strict Schema Validation**, agents autonomously determine required parameters (`hotelName`, `checkinDate`, `checkoutDate`) and validate them locally before execution. This eliminates "hallucinated" booking requests.
+> **Zero-Prompt Engineering:** By adhering to **Strict Schema Validation**, agents autonomously determine required parameters (`hotelName`, `checkinDate`, `checkoutDate`) and validate them locally. This ensures a 100% reliable handshake between the agent and the **BusinessHotels** inventory.
 
 ---
 
-## 🛠️ Connection & Discovery 
+## 🛠️ Connection & Discovery
 
-This server is optimized for autonomous agents and "Bleisure" (business + leisure) workflows. It supports both persistent streaming (SSE) and stateless requests.
+This infrastructure is optimized for autonomous agents and "Bleisure" (business + leisure) workflows, supporting both persistent streaming (SSE) and stateless HTTP requests.
 
-| Resource | URL / Access Path |
+| Resource | Access URL |
 | :--- | :--- |
-| **Live Tool Registry** | [https://www.businesshotels.com/mcp-server.php?route=tools](https://www.businesshotels.com/mcp-server.php?route=tools) |
-| **OpenAPI Specification** | [https://www.businesshotels.com/openapi.json](https://www.businesshotels.com/openapi.json) |
-| **MCP Config Manifest** | [https://www.businesshotels.com/mcp-server.php?route=config](https://www.businesshotels.com/mcp-server.php?route=config) |
-| **AI Plugin Spec** | [https://www.businesshotels.com/.well-known/ai-plugin.json](https://www.businesshotels.com/.well-known/ai-plugin.json) |
-| **Developer Documentation** | [https://www.businesshotels.com/tool-config.html](https://www.businesshotels.com/tool-config.html) |
+| **Universal Tools Registry** | [mcp-server.php?route=tools](https://www.businesshotels.com/mcp-server.php?route=tools) |
+| **OpenAPI Specification** | [openapi.json](https://www.businesshotels.com/openapi.json) |
+| **MCP Discovery Spec** | [.well-known/mcp.json](https://www.businesshotels.com/.well-known/mcp.json) |
+| **AI Plugin Manifest** | [.well-known/ai-plugin.json](https://www.businesshotels.com/.well-known/ai-plugin.json) |
+| **Full Configuration Guide** | [tool-config.html](https://www.businesshotels.com/tool-config.html) |
 
 ---
 
-### 🚀 Agentic Performance
-* **Latency:** <1s response time for real-time inventory lookups.
-* **Infrastructure:** Direct BKG/AGD feed integration via Priceline Partner Solutions.
+### 🚀 Agentic Infrastructure
+* **Latency:** <1s response time optimized for real-time Agentic search.
 * **Studio:** Engineered by **Asian Airfares Group, LLC** — San Francisco, CA.
-* **Efficiency:** Built with **AI Efficiency Priority** to minimize token overhead and power consumption.
+* **Sustainability:** Built with **AI Efficiency Priority** to minimize token overhead and power consumption.
 
 ...
 | [Full API Docs](https://www.businesshotels.com/tool-config.html) |
