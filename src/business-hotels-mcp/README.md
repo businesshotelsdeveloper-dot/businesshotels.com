@@ -107,6 +107,24 @@ Add the following block to the `mcpServers` section of your `claude_desktop_conf
  
 ```
 
+**Option 2: Claude.ai Custom Connector (Remote MCP — No install required)**
+
+For [claude.ai](https://claude.ai) users (Free, Pro, Max, Team & Enterprise):
+
+1. Go to **Settings → Connectors → Add custom connector**
+2. Enter the following:
+
+| Field | Value |
+|---|---|
+| Name | `BusinessHotels Live Rates` |
+| Remote MCP server URL | `https://www.businesshotels.com/mcp-server-claude.php` |
+
+3. Click **Add** → then **Connect**
+
+Claude will automatically discover the `get_live_hotel_rates` tool and use it in any conversation. No npm, no local install, no API key required.
+
+> **Note:** This endpoint (`mcp-server-claude.php`) is dedicated to claude.ai and implements the full MCP JSON-RPC 2.0 handshake (`initialize` → `tools/list` → `tools/call`) required by Claude's custom connector protocol. For Claude Desktop (local), use Option 1 above.
+
  ## Remote SSE (Best for Cursor & Windsurf)
 
  
