@@ -53,7 +53,7 @@ This server is a **Multi-Model Transport Hub** that provides autonomous AI agent
 | **Claude.ai** | MCP (SSE) | `https://www.businesshotels.com/mcp-server-claude.php` |
 | **Perplexity Comet** | MCP (JSON-RPC) | `https://www.businesshotels.com/mcp-server-perplexity.php` |
 | **Gemini / Grok** | MCP (Stateless) | `https://www.businesshotels.com/mcp-server.php?route=tools` |
-| **ChatGPT** | OpenAPI 3.1 | `https://www.businesshotels.com/openapi.json` |
+| **ChatGPT** | MCP (OpenAPI 3.1) | `https://www.businesshotels.com/mcp-server-chatgpt.php` |
 | **Discovery Spec** | JSON Manifest | `https://www.businesshotels.com/.well-known/mcp.json` |
 | **Plugin Spec** | Manifest | `https://www.businesshotels.com/.well-known/ai-plugin.json` |
 
